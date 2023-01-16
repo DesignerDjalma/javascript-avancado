@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css">
+</head>
+<body>
+
+<style>
+    body{
+        padding: 30px;
+    }
+
+    .formulario-wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario {
+        background-color: cadetblue;
+        border-radius: 15px;
+        padding: 30px;
+        width: 500px;
+    }
+</style>
+
+
+    <div class="formulario-wrap">
+        <div class="formulario">
+            <form id="formulario-form">
+                <div class="field">
+                    <label class="label">Nome</label>
+                    <div class="control">
+                    <input class="input" id="user_nome"type="text" placeholder="Nome" required>
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <label class="label">CEP</label>
+                    <div class="control">
+                    <input class="input" id="user_cep"type="text" placeholder="CEP" required>
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <label class="label">Rua</label>
+                    <div class="control">
+                    <input class="input" id="user_rua"type="text" placeholder="Rua" required>
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <label class="label">Bairro</label>
+                    <div class="control">
+                    <input class="input" id="user_bairro" type="text" placeholder="Bairro" required>
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <label class="label">Cidade</label>
+                    <div class="control">
+                    <input class="input" id="user_cidade" type="text" placeholder="Cidade" required>
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <label class="label">Estado</label>
+                    <div class="control">
+                    <input class="input" id="user_estado" type="text" placeholder="Estado" required>
+                </div>
+    
+    
+    
+                <button style="margin-top: 30px;" id="save-button" type="file" class="button is-link">
+                    Escolher Arquivo
+                </button>
+                <button style="margin-top: 30px;" id="save-button" type="button" class="button is-link">
+                    Salvar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+<script>
+
+    function mostrarArquivo(entrada){
+        let arquivo = entrada.arquivos[0];
+        let fr = new FileReader();
+        fr.onload = function(dadosArquivo){
+            let dados = JSON.parse(dadosArquivo.target.result);
+            document.getElementById("");
+        };
+    };
+
+        // document.getElementById("save-button").addEventListener("click", function() {
+        //     var formData = new FormData(document.getElementById("formulario-form"));
+        //     var json = {};
+
+        //     formData.forEach(function(value, key) {
+        //         json[key] = value;
+        //     });
+
+        //     var jsonData = JSON.stringify(json);
+        //     var blob = new Blob([jsonData], {type: "application/json"});
+        //     var url = URL.createObjectURL(blob);
+        //     var a = document.createElement("a");
+        //     a.href = url;
+        //     a.download = "form-data.json";
+        //     document.body.appendChild(a);
+        //     a.click();
+        // });
+
+    </script>
+
+</body>
+</html>
